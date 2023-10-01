@@ -65,7 +65,25 @@ const SideBar = () => {
               <span className="font-bold text-lg">Customers</span>
             </Link>
           </div>
-         
+          <div
+            className={`menu-item flex items-center space-x-6 p-2 rounded-lg cursor-pointer ${
+              activeItem === 'meter' ? 'bg-blue-600 text-white' : ''
+            }`}
+            onClick={() => handleItemClick('meter')}
+          >
+            <div
+              className={`w-8 h-5 text-blue mt-1 flex items-center justify-center ${
+                activeItem === 'meter' ? 'bg-blue-600 rounded-md' : 'rounded-md'
+              }`}
+            >
+              <FaFilter
+                className={`w-8 h-5 ${activeItem === 'meter' ? 'text-white' : 'text-blue'}`}
+              />
+            </div>
+            <Link href="/meter">
+              <span className="font-bold text-lg">Meter</span>
+            </Link>
+          </div>
         </div>
         <div className="mb-60"></div>
         <div className="flex flex-col justify-end flex-grow mt-4 mb-4">
@@ -75,20 +93,18 @@ const SideBar = () => {
             className={`menu-item flex items-center space-x-6 p-2 rounded-lg cursor-pointer ${
               activeItem === 'logout' ? 'bg-blue-600 text-white' : ''
             }`}
-            onClick={() => handleItemClick('logout')}
-          >
+            onClick={() => handleItemClick('logout')}>
             <div
               className={`w-8 h-5 text-blue mt-1 flex items-center justify-center ${
                 activeItem === 'logout' ? 'bg-blue-600 rounded-md' : 'rounded-md'
-              }`}
-            >
+              }`}>
               <FaSignOutAlt
                 className={`w-8 h-5 ${activeItem === 'logout' ? 'text-white' : 'text-blue'}`}
               />
             </div>
             <span className="font-bold text-lg">Logout</span>
           </div>
-          <div className="mb-14"></div>
+          <div className="mb-4"></div>
           <div className="mt-2 text-lg opacity-70">@2023, Nexus All rights reserved</div>
         </div>
       </div>
@@ -99,3 +115,13 @@ const SideBar = () => {
   );
 };
 export default SideBar;
+
+
+
+
+
+
+
+
+
+
