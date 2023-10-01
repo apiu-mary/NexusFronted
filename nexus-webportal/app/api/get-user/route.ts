@@ -1,11 +1,4 @@
-import React from "react";
-export default function dashboard (){
-    return(
-        <div>
-            <p>Dashboard</p>
-        </div>
-    )
-}import { BASE_URL } from "@/config";
+import { BASE_URL } from "@/config";
 export async function GET() {
   try {
     if (!BASE_URL) {
@@ -39,15 +32,3 @@ export async function GET() {
     });
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-

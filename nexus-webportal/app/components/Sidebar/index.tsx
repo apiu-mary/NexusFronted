@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FaHome, FaUsers, FaSignOutAlt, FaFilter } from 'react-icons/fa';
 import Link from 'next/link';
 
-const Dashboard = () => {
+const SideBar = () => {
   const [activeItem, setActiveItem] = useState<string | null>('dashboard');
 
   useEffect(() => {
@@ -35,13 +35,11 @@ const Dashboard = () => {
             className={`menu-item flex items-center space-x-6 p-2 rounded-lg cursor-pointer ${
               activeItem === 'dashboard' ? 'bg-blue-600 text-blue-100' : ''
             }`}
-            onClick={() => handleItemClick('dashboard')}
-          >
+            onClick={() => handleItemClick('dashboard')}>
             <div
               className={`w-8 h-6 text-blue mt-1 flex items-center justify-center ${
                 activeItem === 'dashboard' ? 'bg-blue-600 rounded-md' : ''
-              }`}
-            >
+              }`}>
               <FaHome
                 className={`w-6 h-6 ${activeItem === 'dashboard' ? 'text-blue' : 'text-blue'}`}
               />
@@ -54,16 +52,13 @@ const Dashboard = () => {
             className={`menu-item flex items-center space-x-6 p-2 rounded-lg cursor-pointer ${
               activeItem === 'customers' ? 'bg-blue-600 text-white' : ''
             }`}
-            onClick={() => handleItemClick('customers')}
-          >
+            onClick={() => handleItemClick('customers')}>
             <div
               className={`w-8 h-8 text-blue mt-1 flex items-center justify-center ${
                 activeItem === 'customers' ? 'bg-blue-600 rounded-md' : 'rounded-md'
-              }`}
-            >
+              }`}>
               <FaUsers
-                className={`w-6 h-6 ${activeItem === 'customers' ? 'text-white' : 'text-blue'}`}
-              />
+                className={`w-6 h-6 ${activeItem === 'customers' ? 'text-white' : 'text-blue'}`}/>
             </div>
             <Link href="/customers">
               <span className="font-bold text-lg">Customers</span>
@@ -73,16 +68,13 @@ const Dashboard = () => {
             className={`menu-item flex items-center space-x-6 p-2 rounded-lg cursor-pointer ${
               activeItem === 'meter' ? 'bg-blue-600 text-white' : ''
             }`}
-            onClick={() => handleItemClick('meter')}
-          >
+            onClick={() => handleItemClick('meter')}>
             <div
               className={`w-8 h-5 text-blue mt-1 flex items-center justify-center ${
                 activeItem === 'meter' ? 'bg-blue-600 rounded-md' : 'rounded-md'
-              }`}
-            >
+              }`}>
               <FaFilter
-                className={`w-8 h-5 ${activeItem === 'meter' ? 'text-white' : 'text-blue'}`}
-              />
+                className={`w-8 h-5 ${activeItem === 'meter' ? 'text-white' : 'text-blue'}`}/>
             </div>
             <Link href="/meter">
               <span className="font-bold text-lg">Meter</span>
@@ -97,16 +89,13 @@ const Dashboard = () => {
             className={`menu-item flex items-center space-x-6 p-2 rounded-lg cursor-pointer ${
               activeItem === 'logout' ? 'bg-blue-600 text-white' : ''
             }`}
-            onClick={() => handleItemClick('logout')}
-          >
+            onClick={() => handleItemClick('logout')}>
             <div
               className={`w-8 h-5 text-blue mt-1 flex items-center justify-center ${
                 activeItem === 'logout' ? 'bg-blue-600 rounded-md' : 'rounded-md'
-              }`}
-            >
+              }`}>
               <FaSignOutAlt
-                className={`w-8 h-5 ${activeItem === 'logout' ? 'text-white' : 'text-blue'}`}
-              />
+                className={`w-8 h-5 ${activeItem === 'logout' ? 'text-white' : 'text-blue'}`}/>
             </div>
             <span className="font-bold text-lg">Logout</span>
           </div>
@@ -120,5 +109,4 @@ const Dashboard = () => {
     </div>
   );
 };
-
-export default Dashboard;
+export default SideBar;

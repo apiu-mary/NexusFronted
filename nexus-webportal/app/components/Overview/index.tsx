@@ -4,7 +4,7 @@ import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 
 const Overview = () => {
-  const chartWidth = '850px'; 
+  const chartWidth = '800px'; 
   const chartHeight = '0px'; 
 
   const data = {
@@ -20,14 +20,12 @@ const Overview = () => {
       },
     ],
   };
-
   const options = {
     plugins: {
       legend: {
         display: true,
         position: 'top' as 'top',
       },
-     
     },
     scales: {
       x: {
@@ -69,7 +67,7 @@ const Overview = () => {
       </div>
       {/*  */}
       <div>
-      <div className="flex flex-col items-center justify-center mt-[-5%] mr-[-6%]">
+      <div className="flex flex-col items-center justify-center mt-[-7%] mr-[-6%]">
       <h2 className="text-1xl font-bold mb-4">Monthly Power Consumption</h2>
       <div style={{ width: chartWidth, height: chartHeight }}>
         <Bar data={data} options={options} />
@@ -77,7 +75,7 @@ const Overview = () => {
     </div>
       </div>
       <div>
-      <div className="details-section w-full mt-[44%] ml-[12%]">
+      <div className="details-section w-full mt-[40%] ml-[12%]">
       <h2 className="text-2xl font-bold mb-3 ">Details</h2>
       <table className="w-full">
         <thead>

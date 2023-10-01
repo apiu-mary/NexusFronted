@@ -11,8 +11,7 @@ export const metadata: Metadata = {
 }
 import React from "react";
 
-
-import SideBar from './Components/SideBar'
+import SideBar from './components/Sidebar'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -20,9 +19,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className + "flex"}>
         <div className="flex">
 
-          <Dashboard/>
-
-         
           <SideBar/>
           
 

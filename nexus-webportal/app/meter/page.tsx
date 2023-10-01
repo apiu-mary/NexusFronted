@@ -57,97 +57,43 @@ const Meter = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 3;
-
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const displayedCustomers = customers.slice(startIndex, endIndex);
-
   const totalPages = Math.ceil(customers.length / itemsPerPage);
-
   const goToPreviousPage = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
-
   const goToNextPage = () => {
     setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
   };
-
   return (
     <div>
-      <div className="py-4 ml-[25%]  " >
-        <div className="container mx-auto  space-x-[14px] flex flex-wrap justify-center" >
-          <div className="w-64 bg-blue-700 shadow-lg  rounded-lg m-2 p-6 text-center relative">
-            <h3 className="text-2xl text-white">Customers</h3>
-            <p className="text-2xl f text-white mt-2">2500</p>
-          </div>
-          <div className="w-64 bg-blue-700  shadow-lg rounded-lg m-2 p-6 text-center relative">
-            <h3 className="text-2xl  text-white">Meters</h3>
-            <p className="text-3xl  text-white mt-2">30</p>
-          </div>
-        </div>
+      <div className='grid place-items-center'>
+      <h2 className="text-blue-500 ">Peris Ndimu</h2>
       </div>
-
-      <div className="flex flex-col items-center justify-center w-[90%] mx-auto ml-[20%]">
+<div className="flex">
+  <div className="flex flex-col ml-80 mt-">
+    <p className="text-black">Current reading</p>
+    <p className="text-black">23.0</p>
+    <hr className="h-0.5 my-4 w-80 bg-blue-500 border-0 dark:bg-blue-600 dark:border-blue-600" />
+    <p className="text-black">Date</p>
+    <p className="text-black">12-04-2023</p>
+    <hr className="h-0.5 my-4 w-80 bg-blue-500 border-0 dark:bg-blue-600 dark:border-blue-600 mt-[12%]" />
+  </div>
+  <div className="flex flex-col mt-6 ml-40">
+    <p className="text-black">Status</p>
+    <p className="text-black">Active</p>
+    <hr className="h-0.5 my-4 w-80 bg-blue-500 border-0 dark:bg-blue-600 dark:border-blue-600 " />
+    <p className="text-black">Meter Serial No</p>
+    <p className="text-black">256</p>
+    <hr className="h-0.5 my-4 w-80 bg-blue-500 border-0 dark:bg-blue-600 dark:border-blue-600 mb-10" />
+  </div>
+</div>
+      <div className="flex flex-col items-center justify-center w-[75%] mx-auto ml-[20%] mt-[10%]">
         <h2 className="text-xl font-bold mb-4 mt-3"></h2>
         <Bar data={data} options={options} />
       </div>
-
-      <div className="details-section ml-80 " >
-        <h2 className="text-3xl font-bold mb-0 py-2" ></h2>
-        <table className="w-full">
-          <thead>
-            <tr>
-              <th className="text-left -pl-40 py-3">Customer</th>
-              <th className="text-left pl-60 py-3 pl-30"><p >Meter Number</p></th>
-              <th className="text py-3 pl-80">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {displayedCustomers.map((customer, index) => (
-              <tr key={index}>
-                <td className="py-2pl-40 ">{customer.name}</td>
-                <td className="py-2 pl-60">{customer.meterNumber}</td>
-                <td className="py-2 pl-80 flex items-center">
-                  <div
-                    className={`w-4 h-4 rounded-full ${customer.status === 'Inactive' ? 'bg-red-600' : 'bg-green-500'}`}
-                  ></div>
-                  <span className="ml-4">
-                    {customer.status === 'Inactive' ? 'Inactive' : 'Active'}
-                  </span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-
-        <div className="pagination-controls mt-5 flex justify-end space-x-4 mr-10 mb-1">
-        <button
-          onClick={goToPreviousPage}
-          disabled={currentPage === 1}
-          className={`text-md font-bold px-2 rounded-lg  ${
-            currentPage === 1
-              ? 'bg-gray-300 text-gray-600 cursor-not-allowed'
-              : 'bg-blue-500 text-white hover:bg-blue-600 hover:text-white'
-          }`}
-        >
-          Previous
-        </button>
-        <span className="pagination-info">
-          Page {currentPage} of {totalPages}
-        </span>
-        <button
-          onClick={goToNextPage}
-          disabled={currentPage === totalPages}
-          className={`text-md font-bold px-2 rounded-lg   ${
-            currentPage === totalPages
-              ? 'bg-gray-300 text-gray-600 cursor-not-allowed'
-              : 'bg-blue-500 text-white hover:bg-blue-600 hover:text-white'
-          }`}
-        >
-          Next
-        </button>
-      </div>
-    </div>
     </div>
   );
 };
