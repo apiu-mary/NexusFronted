@@ -1,3 +1,4 @@
+
 export const getUsers = async () => {
   try {
     const response = await fetch(`api/get-user`, {
@@ -12,3 +13,4 @@ export const getUsers = async () => {
     return error;
   }
 }
+

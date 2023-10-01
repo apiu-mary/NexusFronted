@@ -3,6 +3,8 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 
+
+
 const Overview = () => {
   const chartWidth = '800px'; 
   const chartHeight = '0px'; 
@@ -27,6 +29,7 @@ const Overview = () => {
         position: 'top' as 'top',
       },
     },
+
     scales: {
       x: {
         title: {
@@ -110,6 +113,7 @@ const Overview = () => {
         </tbody>
       </table>
     </div>
+     
       </div>
     </div>
   );

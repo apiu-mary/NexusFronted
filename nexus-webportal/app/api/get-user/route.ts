@@ -20,6 +20,7 @@ export async function GET() {
       });
     }
     const userData = await response.json();
+
     return new Response(JSON.stringify(userData), {
       status: 200,
       statusText: "Success",
@@ -31,4 +32,4 @@ export async function GET() {
       statusText: "Failed",
     });
   }
-}
+};
